@@ -46,7 +46,17 @@ One important feature of python is that amount of built in libraries and the amo
 | list.pop(index) | Removes an element at a specific index position, or if not index position is provided, removes the last item on the list | 
 | list.remove() | Removes a list item with a  specified value | 
 | list.reverse() | Reverses the list order | 
-| list.sort() | sorts the list alphabetically | 
+| list.sort() | sorts the list alphabetically |
+
+## Dictionary Methods
+|Method|What it does|
+|-|-|
+| dict.get(key, set_default_value)| If key exists that value will be returned, or the default value of None will be returned.|
+| dict.copy() | Returns a copy of the dictionary. This would be useful when you want to copy the dictionary and you dont just want to create a pointer to the old dictionary. | 
+| dict.pop(key) | Removes an element at a specific key/value. | 
+| dict.values() | Will return the values of the dictionary. |
+| dict.items() | Will return the keys and values of the dictionary, used in a for loop. |
+
 
 ## Sets notes
 What is a set?
@@ -55,6 +65,15 @@ What is a set?
 - To join two sets your would use the | (pipe), just like a math equation.
 - You can find the intersections of two sites with the &.
 - One advantage is that Sets logic can be performed a lot quicker than list logic can be.
+Example of a set
+{'192.168.1.1', '10.10.10.10', '172.16.16.1' }
+
+A set union looks like this, this will give all the elements and if there is matching data, only one of the same data will show up.
+set_1_var | set_2_var or you can do the following set_1_var.union(set_2_var)
+
+A set intersection will show you only the matching elements in the two sets.
+set_1_var & set_2_var or you can do the following set_1_var.intersection(set_2_var)
+
 
 
 
@@ -103,6 +122,18 @@ if "apples" in ["bananas", "peach"]
 else:
     print ("this is false")
 
+
+### Try/Except
+
+try:
+    your code
+except (error_you_want_to_except, you could capture more than one if you want):
+    What you want to happen next
+except or_can_capture_another_error_like_this:
+    do what you want here.
+finally:
+    this will run always regardless of if you have an exception or not.
+    
 
 ## Logging
 logging module built into python. No need to install anything special.

@@ -27,3 +27,6 @@ $ | The dollar sign signifies the end of the line. If you only do the dollar sig
 ^$ |  Carrot Dolar sign will match on the start and the end of the line.
 (?<=) | This is called a positive look behind.
 (?<!) | This is called a negitive look behind.
+
+
+Greedy vs non-greedy
