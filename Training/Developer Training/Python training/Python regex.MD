@@ -22,3 +22,7 @@ Some other methods you might want to use
 - re.split()
 - re.sub()
 - re.findall()
+
+
+Greedy vs non-greedy
+By default python regular expressions are greedy, meaning they will match the longest string possible. The non-greedy (also know as lazy) will match on the shortest string possible. The non-greedy version is followed by a question mark. 

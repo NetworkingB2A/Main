@@ -1,6 +1,6 @@
 good documentation for a README file
 
-Exmaple is stronghold project
+Example is stronghold project
 
 logo, name of project
 badges.

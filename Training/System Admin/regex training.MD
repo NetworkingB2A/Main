@@ -10,7 +10,7 @@ The f<b><i>at</i></b> c<b><i>at</i></b> ran down the street. The c<b><i>at</i></
 Symbol|What symbol means|
 -|-
 \+ | Match at least one but it can match more than one character 
-? | Match an optional character 
+? | Match an optional character, or used to highlight a match as non-greedy. 
 \* | Match zero or more
 \. | Match any single character, except for a new line
 \ | The backslash cancels anything that comes after it. us it with a period to match a period as appose to a wildcard period
@@ -22,11 +22,8 @@ Symbol|What symbol means|
 \[any_character] | This will match any character that is inside the brackets, you can do ranges here.
 any_character_1\|any_character_2 | This will search for the character on the left or ont the write.
 (Group) | this will allow you to group portions of the regex.
-^ | The carrot signifies the start of a line. If you only do the carrot, it will match on the first word of the line.
+^ | The carrot signifies the start of a line. If you only do the carrot, it will match on the first word of the line. Also if used in brackets carrot acts like a null character.
 $ | The dollar sign signifies the end of the line. If you only do the dollar sign it will only match on the last word
-^$ |  Carrot Dolar sign will match on the start and the end of the line.
+^$ |  Carrot Dollar sign will match on the start and the end of the line.
 (?<=) | This is called a positive look behind.
-(?<!) | This is called a negitive look behind.
-
-
-Greedy vs non-greedy
+(?<!) | This is called a negative look behind.

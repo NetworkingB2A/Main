@@ -10,7 +10,7 @@ Why do you need git?
 
 basic Git commands/terminology
 
-create these first when you want to pull down config. This is meta data about youself, needed for git commands later on.
+create these first when you want to pull down config. This is meta data about yourself, needed for git commands later on.
   - git config --global user.name "Your Name"
   - git config --global user.email "your_email@whatever.com"
 
@@ -23,7 +23,7 @@ Creating a new repository
     - git init 
       - This will create a repository for your project. That repository is stored on your computer.
     - git add hello_world.txt  
-      - This will create a snapshot of the project. you can add a single file or many files. This didnt create the snapshot. this is just the first step. this is acutally called the index in git.
+      - This will create a snapshot of the project. you can add a single file or many files. This didn't create the snapshot. this is just the first step. this is actually called the index in git.
     - git commit -m "adding first file" 
       - This will create a snapshot from your index, and this will add to your repository. good practice to give details about this commit. you should only commit the files that you want to change.
       - git message tips and tricks (https://chris.beams.io/posts/git-commit/)
@@ -48,11 +48,11 @@ Data about your current git project ( I cant think of a better name yet.)
     - git log --diff
       - shows all the differences in the commits
   - git status 
-    - This will tell you if your file are commited in your repository.
+    - This will tell you if your file are committed in your repository.
     - You can put a --short or -s and you will see a shorter list of your current status ( kinda nice when you do this via cli)
   - git diff (some commit id) (some other commit id )
     - this will show the differences in the git snapshots. if you want to see the differences in your commits your must put the commit code. you only need to see the first few digits and not the whole code.
-    - if you add a --staged you will see a difference between your commited files and your staged files 
+    - if you add a --staged you will see a difference between your committed files and your staged files 
     - if you want to see a difference in your working directory that has not been staged, just use a git diff.
   - git reset  
     - this will allow us to throw changes away 
@@ -71,8 +71,10 @@ git checkout (newer versions of git can use a get switch)
   - this will allow you to change between commits
   - this will take that commit and puts in our file system
   - in doing this you can grab your old commit that was working and have it fix a new bug that you may have introduced 
-  git checkout (branch-Name)
+  git checkout (branch-Name) or git switch (branch-Name)
   - This will allow you to Branch your code
+  - When using the -c flag with git switch it will create a branch and switch it over the to new branch.
+  - 
 
 git merge 
   git merge (main-branch)
@@ -87,8 +89,15 @@ git merge
     - Target branch - The branch of where the changes are being pulled from
     - Receiving branch - The branch where your changes are being pulled into.
   - Conflicts in file changes need to be resolved manually
-
-  Fast forward merge
+  - How to resolve conflicts?
+    - multi-step process
+    - Git tells you which file.
+    - you need to open file and fix conflict.
+      - You pick which changes you want. head is the one you are merging into, the other branch shows the code you are trying to merge in.
+      - remove the conflict markers and save the new file and create a commit.
+    - commit the fixed conflict.  
+  
+  Fast forward merge  
           --0--0--0 <- master branch
          /
   --0--0/
@@ -108,6 +117,18 @@ What is a Branch?
 What is a conflict?
   - if two commits change the same line of code. you can have a conflict in that code.
 
+What is HEAD?
+- HEAD is essentially a pointer. if you switch from working on branch main to a branch called new_branch. then HEAD is moved from main to new_branch.
+
+What is a detached head?
+- You are pointing head at a specific commit and not at a branch reference in your repo.
+
+How to reattach your head.
+- You can switch to a branch and that will fix the detached head state.
+- You can switch to a commit and then create a new branch which will fix HEAD again.
+
+One way to undo changes to a file is to use the following command
+- git restore <file name>
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
@@ -142,6 +163,9 @@ git branch
 git pull vs get fetch 
   - I dont really know yet.
 
-The only two reasons i would use this next part is
-  - because I dont want to log into the gui
-  - I want to change my repository name
+What is a git remote?
+- Before we can push anything to Github we need to talke git about the remote repo on github. We need to setup a destination to push to.
+- In git, we refer to these destinations as remotes. Each remote is simply a URL where a hosted repo lives.
+- git remote or git remote -v
+- when creating a new remote (which if you use a git clone this will happen automatically for you) use the following command. git remote add {name} {url}
+- When you see "origin" that 
