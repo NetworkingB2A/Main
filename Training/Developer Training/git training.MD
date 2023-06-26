@@ -160,12 +160,27 @@ git branch
 
 
 
-git pull vs get fetch 
-  - I dont really know yet.
+git pull vs git fetch 
+  - A git fetch will pull down changes from the remote repo and put them into out local repo. The local repo is where a change goes once you have committed it. Those changes are not integrated into our working files.
+  - A git pull will pull down the changes from the remote repo and install them into our workspace.
 
 What is a git remote?
-- Before we can push anything to Github we need to talke git about the remote repo on github. We need to setup a destination to push to.
+- Before we can push anything to Github we need to talk git about the remote repo on github. We need to setup a destination to push to.
 - In git, we refer to these destinations as remotes. Each remote is simply a URL where a hosted repo lives.
 - git remote or git remote -v
 - when creating a new remote (which if you use a git clone this will happen automatically for you) use the following command. git remote add {name} {url}
 - When you see "origin" that 
+
+#### Git rebase
+What is git rebase?
+- Its a way to avoid doing merge commits. 
+- Example - You are working on a branch and you want your branch to include the changes that were made to your main branch. normally you need to do a git pull to update your working files. then you need to merge the changes from main into your branch. when you do this merge you must create a kind of useless commit that is just a merge commit. and you may need to do this many many times as you keep working on your branch
+- instead you can do a rebase and that allow you to skip doing a merge commit and essentially pull the changes from main into your branch without the commit.
+
+What is the use case for git rebase?  
+- There are two main ways to use the git rebase command:
+  - as an alternative to merging
+  - as a cleanup tool
+
+When should you not use rebase?
+- Golden rule - Never rebase commits that have been shared with others. if you have already pushed commits up to github... DO NOT rebase them unless you are positive no one on the team is using those commits.

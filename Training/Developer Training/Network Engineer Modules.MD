@@ -16,10 +16,12 @@ napalm: napalm (Network automation and programmability abstraction layer with mu
 
 scrapli (extensions) - 
 
-### Inventory Management
+### Inventory Management and orchestration
 
 nornir: This is an extendable, multithreaded framework with inventory management to work with large number of network devices. This also works with your configuration platform. Just remember that nornir is a pythonic way of doing many tasks to many devices at one time, and a way of managing your inventory.
 
+
+Ansible:
 
 ### Parsers and Data interpreters
 
