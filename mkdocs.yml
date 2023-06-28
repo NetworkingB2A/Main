@@ -1,3 +1,5 @@
 site_name: My Docs
 site_url: https://NetworkingB2A.github.io/Portfolio
+nav:
+    - Home: index.md 
 theme: readthedocs
