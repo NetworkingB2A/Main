@@ -1,5 +1,10 @@
 site_name: My Docs
 site_url: https://NetworkingB2A.github.io/Portfolio
 nav:
-    - Home: index.md 
+    - Home: index.md
+    - Markdown Tips: ../markdown_tips.md
+    - Networking: Networking/VxLAN.md
 theme: readthedocs
+plugins:
+  - search:
+      lang: en

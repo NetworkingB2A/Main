@@ -1,7 +1,7 @@
-What is VxLan?
-- it it helps reducing the need for Spanning tree, trucking
-- It allows you to put a Layer 2 network overlay with a layer 3 underlay
-- Standard based - RFC XXX
+What is VxLan?  
+- it it helps reducing the need for Spanning tree, trucking  
+- It allows you to put a Layer 2 network overlay with a layer 3 underlay  
+- Standard based - RFC XXX  
 
 Vlan 
 - id is 12 bits long
