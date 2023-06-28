@@ -1,9 +1,5 @@
 site_name: Training
 site_url: https://NetworkingB2A.github.io/Portfolio
-nav:
-    - Home: index.md
-    - Markdown: markdown_tips.md
-    - Networking: Networking/VxLAN.md
 #theme: readthedocs
 theme: 
     name: material
