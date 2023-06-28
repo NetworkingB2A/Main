@@ -1,0 +1,10 @@
+site_name: Mkdocs Demo
+site_url: https://github.com/aaronhuff/mkdocs-demo
+nav:
+  - Home: index.md
+  - Support:
+    - Build: support/build.md
+  - Other:
+    - Docs: https://github.com/aaronhuff/
+    - Issues: https://github.com/aaronhuff/mkdocs-demo/issues
+theme: readthedocs
