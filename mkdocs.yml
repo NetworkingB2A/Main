@@ -1,10 +1,22 @@
-site_name: My Docs
+site_name: Training
 site_url: https://NetworkingB2A.github.io/Portfolio
 nav:
     - Home: index.md
     - Markdown Tips: ../markdown_tips.md
     - Networking: Networking/VxLAN.md
-theme: readthedocs
+#theme: readthedocs
+theme: 
+    name: material
+    features:
+        - navigation.tabs
+        - navigation.sections
+        - toc.integrate
+        - search.suggest
+        - search.highlight
+        - content.tabs.link
+        - content.code.annotate
+        - content.code.copy
+    language: en
 plugins:
   - search:
       lang: en
