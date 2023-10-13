@@ -123,62 +123,19 @@ else:
     print ("this is false")
 
 
-### Try/Except
+### Try/Except/Finally
+
 
 try:
     your code
-except (error_you_want_to_except, you could capture more than one if you want):
+except (error_you_want_to_except, you could capture more than one if you want) as variable_exception_name:
     What you want to happen next
+    raise custom_exception_you_want_to_raise <<<<<(this keyword, raise is used to re-raise an error. You would use this for capturing custom error messages.)
 except or_can_capture_another_error_like_this:
     do what you want here.
 finally:
     this will run always regardless of if you have an exception or not.
     
-
-## Logging
-logging module built into python. No need to install anything special.
-
-Link to the python documentation.
-https://docs.python.org/3/library/logging.html
-
-
-### Why use logging vs print?
-Logging will allow you to capture additional data about the running of your code. It will give you flexibility as to how you capture your logs. Print only allow very basic capturing of your logging.
-
-
-
-### logging levels
-| Level | Numeric value | Description
-|-|-|-|
-|CRITICAL| 50| A serious error, indicating that the program itself may be unable to continue running.|
-|ERROR| 40| Due to a more serious problem, the software has not been able to perform some function.|
-|WARNING| 30| An indication that something unexpected happened, or indicative of some problem in the near future. |The software is still working as expected. This is the default level for the logging module.
-|INFO |20| Confirmation that things are working as expected|
-|DEBUG| 10| Detailed information, typically of interest only when diagnosing problems. When this is used it works a lot like the print statement and displays basic data to the screen. |
-|NONSET| 0||
-
-### More advanced logging
-If you default to the root logging and you decide to import a different module that also has a root logger, the root logger of the imported class will actually do the logging and the logger you have in your main code down below will not be called, because you already have a root logger called.
-Example of best practice code
-
-using the \_\_name__ will pass the name of the module you are running into the logger, this will replace the word root in the logger.
-<code>
-import logging
-logger = logging.getLogger(\_\_name__)
-
-#You would use this next part if you want to customize your logger a bit more. This will allow you to change the root logger info.
-logger.setLevel(logging.INFO)
-formatter = logging.Formatter('%(asctime)s:%(name)s:%(levelname)s:%(message)s')
-file_handler = logging.FileHandler('runbook_logging/testlog2.log')
-file_handler.setFormatter(formatter)
-
-logger.addHandler(file_handler)
-
-</code>
-You can also do a logging.exception inside a try/except block to log the traceback errors.
-
-If you want this logging to show up on your console window you can use a stream Handler.
-
-
-### Other
-if you call a method without the parentheses, the code will call a memory reference to the method. 
+#### IMPORTANT NOTES
+You should never use broad exception handling. The idea here is that you will expect every error without having to call the the specific error. Although this is an easy way to get your program to run, excepting every error and treating them as the same will make your code very hard to debug and troubleshoot.  
+A use case for using the finally statement is for cleanup of connections that you used in your try or except code. That way you will know that the code in finally statement will always run. 
