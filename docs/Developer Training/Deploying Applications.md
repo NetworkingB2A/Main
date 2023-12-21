@@ -113,3 +113,4 @@ A Gitlab pipeline consists of:
 - Pipeline: a group of jobs divided into different stages
 - Runner: A server or agent that implements each hob separately, which can spin up or down if needed.
 - Stages: Parts of a job(for exmaple, build or tests). Multiple jobs inside the same stage are executed in parallel.
+

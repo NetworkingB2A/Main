@@ -9,7 +9,7 @@ ansible-playbook playbook --list-host
 
 Create a python virtual environment.
 
-<code> python3 -m venv venv </code>
+``` python3 -m venv venv ```
 
 Switch to environment.
 
@@ -25,9 +25,13 @@ install ansible
 ## Need to know commands for Ansible
 view info about your ansible
 
-<code> ansible --version </code>
-<blockquote>
+```linux
+ansible --version
+```
+
+
 Output
+```linux
 
 *ansible [core 2.11.2]
 
@@ -39,7 +43,7 @@ Output
     python version = 3.8.10 (default, Jun  2 2021, 10:49:15) [GCC 10.3.0]
     jinja version = 3.0.1
     libyaml = True
-  </blockquote>
+```
 
 
 ## Good to know
@@ -76,6 +80,18 @@ Parts of Ansible
   
 You can run the following to check you syntax  
 <code> ansible-playbook {Playbook name} --syntax-check </code>
+
+## Ansible Keywords
+- to_nice_json
+
+
+## Best practices
+- if you put more then one playbook into a file, those playbooks should be related.
+
+## Other notes
+- play level should be above the tasks
+- you can run one task at a time if you would like to test out something. this can be done via command line.
+- Plug in changes the data
 
 
 ## Questions
@@ -142,11 +158,11 @@ Handler tasks
 ### Roles
 structure of a role directory
 you can create this by hand or with the ansible galaxy command
-<code> 
+```linux
 mkdir roles
 cd roles/
 ansible-galaxy init {role name}
-</code>
+```
 
 roles/
   common/
@@ -241,3 +257,5 @@ Slightly more advanced
   loop_control:
     loop_var: defaultconfigtasks
 </code>
+
+

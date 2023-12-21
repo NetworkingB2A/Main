@@ -44,7 +44,7 @@ class Interface:
         else:
             raise ValueError(f"Invalid value for intf_mode: {value}")
 
-    @property
+    @property #This is creating a method that is the same as the attribute 
     def access_vlan(self):
         return self._access_vlan
 

@@ -19,19 +19,28 @@ if you would to to find out more about a module or the methods use the following
 - dir(module)
 
 #### What is self?
-when you create a new object python will call a ```__new__``` method. That will create an object in memory. Then python will call the ```__init__``` method of the object.
+when you create a new object python will call a `__new__` method. That will create an object in memory. Then python will call the `__init__` method of the object.
 
 ### Attributes
 Class Attributes
 - All instances of a object of the class type will receive this attribute
+- When using a class attribute, you will need to be careful how you use it. 
+  - if you call `class_name.class_attribute` and update it, this way will update the class attribute. if you call `self.class_attribute` and update it, you are actually creating a new class attribute. 
  example
 ```python
-In [1]: class Person(): 
-   ...:   person_type = "Homosapien" 
+class Person(): 
+    person_type = "Spam"
+    
+    def __init__(self):
+      person_type = "Homosapien" 
 
 adam = Person() 
-adam.person_type
-Out[2]: 'Homosapien'
+print(adam.person_type)
+
+output >> Homosapien
+
+print(Person.person_type)
+output >> Spam
 ```
 
 Instance Attributes
@@ -144,80 +153,6 @@ I am a person, I am 6 ft tall, I weigh 250 lbs. I am also a Male
 With python you can only say that a attribute or method is private. you can't really block the use of the private member from public use.  
 You would put an underscore in front of a private member to signify that the user of your app should not use this member. That this member should only be used for inside the app
 
-### Decorator
-
-What is a decorator in python?  
-A decorator is a function in python that takes another function as its argument and returns yet another function. Decorators can be extremely useful as they allow the extension of an existing function, without the modification to the original function source code.
-
-What is a property decorator in python?  
-@property decorator is a built-in decorator in Python which is helpful in defining the properties effortlessly without manually calling the inbuilt function property(). Which is used to return the property attributes of a class from the stated getter, setter and deleter as parameters.  
-
-Example code  
-In this example I will be using the default getter.
-```python
-class NetworkDevice:
-    def __init__(self, host, platform, username, password):
-        self.host = host
-        self.platform = platform
-        self._username = username
-        self._password = password
-
-    @property
-    def username(self):
-        return self._username
-
-    @property
-    def password(self):
-        return self._password
-```
-Example return
-In the code above you will see that the attribute is actually set to _username. By using the 'property' decorator you can call the `_username` as if it were the actual attribute. 
-
-```python
-
->>> temp_device_1 = NetworkDevice(host='host1.domain.com', platform='cisco_xe', username='admin', password='password123')
->>> temp_device_2 = NetworkDevice(host='host1.domain.com', platform='juniper_junos', username='admin', password='password123')
->>> print(temp_device_1.username, temp_device_1.password )
-admin password123
->>> print(temp_device_1._username, temp_device_1._password )
-admin password123
-
-```
-
-Here is actually a cool use by using getters and setters.
- ```python
-
-class NetworkDevice:
-    def __init__(self, host, platform, username, password):
-        self.host = host
-        self.platform = platform
-        self.username = username
-        self._password = password
-
-
-    @property
-    def password(self):
-        password_len = len(self._password) + 1
-        return '*' * password_len
-        
-    @password.setter
-    def password(self, new_password):
-        print(f'You have reset your password')
-        self._password = new_password
-
- 
-print(temp_device_1.username, temp_device_1.password )
-temp_device_1.username, temp_device_1.password = "new_username", "New_Password"
-print(temp_device_1.username, temp_device_1.password )
-print(f'real password is: {temp_device_1._password} ')
-
-# Here is the result
-admin ************
-You have reset your password
-new_username *************
-real password is: New_Password 
-
- ```
 
 
 ### Static Methods
@@ -225,7 +160,7 @@ A static method can not change the instance or the class. It acts more like a fu
 
 ### Class Methods
 
-### Inheritance 
+
 
 Best practices
 - Use uppercase letters for a class name
