@@ -1,0 +1,7 @@
+- name: testing out playbook
+  hosts: localhost
+  gather_facts: false
+  
+  tasks:
+    - custom_debug:
+        msg: apple
